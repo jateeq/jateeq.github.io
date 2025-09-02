@@ -1,9 +1,9 @@
 import type { Config } from '@docusaurus/types';
 
 export const prodConfig: Partial<Config> = {
-  // Production-specific configuration
+  // Production-specific configuration for jateeq.github.io (user site)
   url: 'https://jateeq.github.io',
-  baseUrl: '/console/',
+  baseUrl: '/',
   
   // Production optimizations
   onBrokenLinks: 'throw', // Strict for production

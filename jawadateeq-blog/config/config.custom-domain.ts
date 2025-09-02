@@ -1,7 +1,7 @@
 import type { Config } from '@docusaurus/types';
 
 export const customDomainConfig: Partial<Config> = {
-  // Custom domain configuration for jawadateeq.com
+  // Custom domain configuration for jawadateeq.com (via jateeq.github.io)
   url: 'https://jawadateeq.com',
   baseUrl: '/',
   
