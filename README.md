@@ -1,4 +1,4 @@
-# Jawad Ateeq's Blog 🌟  
+# Jawad Ateeq's Blog 🌟
 
 Beautiful dark mode blog with starlit sky theme, built with Docusaurus.
 
