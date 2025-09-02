@@ -1,21 +1,23 @@
 # Jawad Ateeq's Personal Website
 # Usage: make <command>
 
-.PHONY: help install dev build clean
+.PHONY: help install dev build build-custom clean
 
 # Default target
 help:
 	@echo "🌟 Jawad Ateeq's Personal Website"
 	@echo ""
 	@echo "Essential commands:"
-	@echo "  make install  - Install dependencies (one-time setup)"
-	@echo "  make dev      - Start local development server"
-	@echo "  make build    - Build for production"
-	@echo "  make clean    - Clean build artifacts"
+	@echo "  make install      - Install dependencies (one-time setup)"
+	@echo "  make dev          - Start local development server"
+	@echo "  make build        - Build for GitHub Pages (jateeq.github.io/console/)"
+	@echo "  make build-custom - Build for custom domain (jawadateeq.com)"
+	@echo "  make clean        - Clean build artifacts"
 	@echo ""
 	@echo "URLs:"
-	@echo "  Local:      http://localhost:3000/"
-	@echo "  Production: https://jateeq.github.io/console/"
+	@echo "  Local:        http://localhost:3000/"
+	@echo "  GitHub Pages: https://jateeq.github.io/console/"
+	@echo "  Custom Domain: https://jawadateeq.com/"
 	@echo ""
 	@echo "Deploy: Just 'git push' (GitHub Actions handles deployment)"
 
@@ -32,11 +34,17 @@ dev:
 	@pkill -f "docusaurus start" || true
 	cd jawadateeq-blog && npm start
 
-# Build for production
+# Build for GitHub Pages production
 build:
 	@echo "🏗️ Building for GitHub Pages production..."
 	@echo "Environment: NODE_ENV=production (set by Docusaurus)"
 	cd jawadateeq-blog && npm run build
+
+# Build for custom domain
+build-custom:
+	@echo "🏗️ Building for custom domain (jawadateeq.com)..."
+	@echo "Environment: NODE_ENV=production, USE_CUSTOM_DOMAIN=true"
+	cd jawadateeq-blog && USE_CUSTOM_DOMAIN=true npm run build
 
 # Clean build artifacts
 clean:

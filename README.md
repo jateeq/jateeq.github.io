@@ -19,22 +19,36 @@ make dev
 ```bash
 git push
 ```
-→ Auto-deploys to **https://jateeq.github.io/console/**
+→ Auto-deploys to **https://jawadateeq.com/**
 
-## 🛠️ One-time GitHub Pages Setup
+## 🛠️ One-time Setup
 
+### GitHub Pages
 1. Go to [Repository Settings → Pages](https://github.com/jateeq/console/settings/pages)
 2. Set Source to **"GitHub Actions"**
-3. Save
+3. Add Custom Domain: **jawadateeq.com**
+4. Enable **"Enforce HTTPS"**
+5. Save
+
+### DNS (at your domain provider)
+Add these DNS records for jawadateeq.com:
+```
+A Record: @ → 185.199.108.153
+A Record: @ → 185.199.109.153  
+A Record: @ → 185.199.110.153
+A Record: @ → 185.199.111.153
+CNAME: www → jateeq.github.io
+```
 
 ## 📋 All Commands
 
 ```bash
-make install    # Install dependencies (first time only)
-make dev        # Start local development server
-make build      # Build for production
-make clean      # Clean build artifacts
-make help       # Show this help
+make install      # Install dependencies (first time only)
+make dev          # Start local development server
+make build        # Build for GitHub Pages
+make build-custom # Build for custom domain (jawadateeq.com)
+make clean        # Clean build artifacts
+make help         # Show this help
 ```
 
 ## 🎨 Features
