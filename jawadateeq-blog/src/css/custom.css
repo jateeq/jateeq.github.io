@@ -1,0 +1,302 @@
+/**
+ * Dark mode starlit sky theme for Jawad Ateeq's blog
+ * Minimalist design focused on content readability
+ */
+
+/* Import a beautiful font for better readability */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Root variables for light mode (fallback) */
+:root {
+  --ifm-color-primary: #6366f1;
+  --ifm-color-primary-dark: #4f46e5;
+  --ifm-color-primary-darker: #4338ca;
+  --ifm-color-primary-darkest: #3730a3;
+  --ifm-color-primary-light: #818cf8;
+  --ifm-color-primary-lighter: #a5b4fc;
+  --ifm-color-primary-lightest: #c7d2fe;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  
+  /* Custom variables */
+  --ifm-font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', 'Fira Code', 'Monaco', 'Cascadia Code', 'Roboto Mono', monospace;
+  --ifm-line-height-base: 1.7;
+}
+
+/* Dark mode - Starlit sky theme */
+[data-theme='dark'] {
+  /* Primary colors - Deep space blue with starlight accents */
+  --ifm-color-primary: #a78bfa;
+  --ifm-color-primary-dark: #8b5cf6;
+  --ifm-color-primary-darker: #7c3aed;
+  --ifm-color-primary-darkest: #6d28d9;
+  --ifm-color-primary-light: #c4b5fd;
+  --ifm-color-primary-lighter: #ddd6fe;
+  --ifm-color-primary-lightest: #ede9fe;
+  
+  /* Background - Deep space */
+  --ifm-background-color: #0f0f23;
+  --ifm-background-surface-color: #1a1a3e;
+  
+  /* Content backgrounds */
+  --ifm-color-content-secondary: #262650;
+  --ifm-card-background-color: #1a1a3e;
+  --ifm-navbar-background-color: rgba(15, 15, 35, 0.95);
+  --ifm-footer-background-color: #0a0a1f;
+  
+  /* Text colors for better contrast */
+  --ifm-color-content: #e2e8f0;
+  --ifm-color-content-inverse: #0f0f23;
+  --ifm-heading-color: #f8fafc;
+  --ifm-font-color-base: #cbd5e1;
+  --ifm-font-color-secondary: #94a3b8;
+  
+  /* Code highlighting */
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.15);
+  --ifm-code-background: rgba(30, 30, 60, 0.6);
+  
+  /* Borders and dividers */
+  --ifm-color-emphasis-200: #334155;
+  --ifm-color-emphasis-300: #475569;
+  --ifm-hr-background-color: #334155;
+  
+  /* Links */
+  --ifm-link-color: #a78bfa;
+  --ifm-link-hover-color: #c4b5fd;
+  
+  /* Scrollbar */
+  --ifm-scrollbar-track-background-color: #1e1e42;
+  --ifm-scrollbar-thumb-background-color: #4c4c7a;
+  --ifm-scrollbar-thumb-hover-background-color: #6366f1;
+}
+
+/* Starlit sky background effect */
+[data-theme='dark'] body {
+  background: 
+    radial-gradient(2px 2px at 20px 30px, #a78bfa, transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.6), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(167, 139, 250, 0.8), transparent),
+    radial-gradient(1px 1px at 130px 80px, rgba(196, 181, 253, 0.4), transparent),
+    radial-gradient(2px 2px at 160px 30px, rgba(139, 92, 246, 0.7), transparent),
+    linear-gradient(45deg, #0f0f23 0%, #1a1a3e 50%, #0f0f23 100%);
+  background-repeat: repeat;
+  background-size: 200px 100px;
+  animation: twinkle 8s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% { 
+    background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+  }
+  100% { 
+    background-position: -200px 0, -200px 0, -200px 0, -200px 0, -200px 0, 0 0;
+  }
+}
+
+/* Navbar styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.navbar__title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--ifm-heading-color);
+}
+
+/* Content container improvements */
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Blog post styling */
+.container {
+  max-width: 800px;
+}
+
+article {
+  background: rgba(26, 26, 62, 0.4);
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  box-shadow: 0 8px 32px rgba(15, 15, 35, 0.5);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #a78bfa, #c4b5fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+p {
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Code blocks */
+.prism-code {
+  background: rgba(30, 30, 60, 0.8) !important;
+  border-radius: 8px;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+/* Inline code */
+code {
+  background: rgba(30, 30, 60, 0.6);
+  color: #a78bfa;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Links */
+a {
+  color: var(--ifm-link-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--ifm-link-hover-color);
+  text-decoration: underline;
+}
+
+/* Blog list styling */
+.blog-list-page .container {
+  max-width: 900px;
+}
+
+.blog-post-item {
+  background: rgba(26, 26, 62, 0.4);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(139, 92, 246, 0.1);
+  transition: all 0.3s ease;
+}
+
+.blog-post-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(15, 15, 35, 0.7);
+  border-color: rgba(139, 92, 246, 0.3);
+}
+
+/* Footer */
+.footer {
+  background: var(--ifm-footer-background-color);
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  article {
+    padding: 1.5rem;
+    margin: 1rem;
+    border-radius: 8px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Focus and accessibility */
+*:focus {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ifm-scrollbar-track-background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ifm-scrollbar-thumb-background-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ifm-scrollbar-thumb-hover-background-color);
+}
+
+/* Reading progress indicator */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ifm-color-primary), var(--ifm-color-primary-lighter));
+  z-index: 9999;
+  transition: width 0.3s ease;
+}
+
+/* Minimalist blockquote */
+blockquote {
+  border-left: 4px solid var(--ifm-color-primary);
+  background: rgba(26, 26, 62, 0.3);
+  padding: 1rem 1.5rem;
+  margin: 2rem 0;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+}
+
+/* Table styling */
+table {
+  background: rgba(26, 26, 62, 0.4);
+  border-radius: 8px;
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th {
+  background: rgba(139, 92, 246, 0.2);
+  color: var(--ifm-heading-color);
+  font-weight: 600;
+}
+
+td, th {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  padding: 0.75rem;
+}
+
+/* Image styling */
+img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
