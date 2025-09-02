@@ -1,30 +1,44 @@
-# Root Makefile - Jawad Ateeq's Personal Website
+# Jawad Ateeq's Personal Website
 # Usage: make <command>
 
-.PHONY: help dev build deploy
+.PHONY: help install dev build clean
 
 # Default target
 help:
 	@echo "🌟 Jawad Ateeq's Personal Website"
 	@echo ""
-	@echo "Quick commands:"
-	@echo "  make dev     - Start local development server"
-	@echo "  make build   - Build for production"
+	@echo "Essential commands:"
+	@echo "  make install  - Install dependencies (one-time setup)"
+	@echo "  make dev      - Start local development server"
+	@echo "  make build    - Build for production"
+	@echo "  make clean    - Clean build artifacts"
 	@echo ""
-	@echo "Note: All commands automatically run in jawadateeq-blog directory"
+	@echo "URLs:"
+	@echo "  Local:      http://localhost:3000/"
+	@echo "  Production: https://jateeq.github.io/console/"
+	@echo ""
+	@echo "Deploy: Just 'git push' (GitHub Actions handles deployment)"
+
+# One-time setup: install dependencies
+install:
+	@echo "📦 Installing dependencies..."
+	cd jawadateeq-blog && npm ci
 
 # Start local development server
 dev:
 	@echo "🚀 Starting local development server..."
-	cd jawadateeq-blog && make deploy-local
+	@echo "Environment: NODE_ENV=development (set by Docusaurus)"
+	@echo "Blog will be available at: http://localhost:3000/"
+	@pkill -f "docusaurus start" || true
+	cd jawadateeq-blog && npm start
 
 # Build for production
 build:
-	@echo "🏗️ Building for production..."
-	cd jawadateeq-blog && make build
+	@echo "🏗️ Building for GitHub Pages production..."
+	@echo "Environment: NODE_ENV=production (set by Docusaurus)"
+	cd jawadateeq-blog && npm run build
 
-# Deploy (just push to git)
-deploy:
-	@echo "🚀 Deploying to GitHub Pages..."
-	@echo "Pushing to git (GitHub Actions will handle deployment)"
-	git add . && git commit -m "Update blog content" && git push
+# Clean build artifacts
+clean:
+	@echo "🧹 Cleaning build artifacts..."
+	cd jawadateeq-blog && rm -rf build/ node_modules/.cache/
