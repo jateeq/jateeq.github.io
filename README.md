@@ -1,29 +1,35 @@
-# Jawad Ateeq's Blog 🌟
+# Jawad Ateeq's Blog 🌟 
 
 Beautiful dark mode blog with starlit sky theme, built with Docusaurus.
 
 ## 🚀 Quick Start
 
 ### First Time Setup
+
 ```bash
 make install
 ```
 
 ### Development
+
 ```bash
 make dev
 ```
+
 → Opens at **http://localhost:3000/**
 
 ### Production
+
 ```bash
 git push
 ```
+
 → Auto-deploys to **https://jawadateeq.com/**
 
 ## 🛠️ One-time Setup
 
 ### GitHub Pages
+
 1. Go to [Repository Settings → Pages](https://github.com/jateeq/console/settings/pages)
 2. Set Source to **"GitHub Actions"**
 3. Add Custom Domain: **jawadateeq.com**
@@ -31,7 +37,9 @@ git push
 5. Save
 
 ### DNS (at your domain provider)
+
 Add these DNS records for jawadateeq.com:
+
 ```
 A Record: @ → 185.199.108.153
 A Record: @ → 185.199.109.153  
